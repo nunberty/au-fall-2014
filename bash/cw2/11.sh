@@ -1,7 +1,7 @@
 #!/bin/bash
 # Alina Kramar
 
-ips=$(ifconfig|grep -Po "inet addr:\d{1,3}\.\d{1,3}\.\d{1,3}"|grep -Po "\d.*")
+ips=$(ip addr | grep -Po "inet \d{1,3}\.\d{1,3}\.\d{1,3}" | grep -Po "\d.*")
 
 for ip in $ips
 do
@@ -9,11 +9,8 @@ do
     then
         for host in $(seq 1 254)
         do
-            ping -c 1 $ip$host > /dev/null
-            if [[ $? == 0 ]]
-            then
-                echo $ip$host
-            fi
+            ping -c 1 $ip.$host > /dev/null
+            [ $? -eq 0 ] && echo $ip.$host
         done
     fi
 done
