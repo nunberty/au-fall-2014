@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{polyglossia}
+\usepackage{fullpage}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\newfontfamily\russianfont[Script=Cyrillic,Mapping=tex-text]
+{CMU Sans Serif}
+
+
+\begin{document}
+
+\title{Домашняя работа 1}
+\author{Алина Крамар}
+
+\maketitle
+\begin{enumerate}
+
+\item
+  \begin{enumerate}
+    \item $\land$
+      \begin{itemize}
+      \item $\neg , \lor $
+
+        $x \land y \leftrightarrow \neg \neg (x \land y) \leftrightarrow \neg
+        (\neg x \lor \neg y)$
+      \item $\to , \bot $
+
+        $(x \to (y \to \bot)) \to \bot $
+      \item $\downarrow$
+
+        $(x \downarrow x) \downarrow (y \downarrow y)$
+      \end{itemize}
+
+    \item $\lor$
+      \begin{itemize}
+      \item $\to , \bot $
+
+        $(x \to \bot) \to y$
+      \item $\downarrow$
+
+        $(x \downarrow y) \downarrow (x \downarrow y)$
+      \end{itemize}
+
+    \item $\to$
+      \begin{itemize}
+      \item $\neg , \lor$
+
+        $x \to y \leftrightarrow \neg x \lor y$
+      \item $\downarrow$
+
+        $((x \downarrow x) \downarrow y) \downarrow ((x \downarrow x) \downarrow y)$
+      \end{itemize}
+
+    \item $\neg$
+      \begin{itemize}
+      \item $\to , \bot $
+
+        $x \to \bot$
+      \item $\downarrow$
+
+        $(x \downarrow x)$
+      \end{itemize}
+
+    \item $\bot$
+      \begin{itemize}
+      \item $\neg , \lor $
+
+        $\neg (x \lor \neg x)$
+      \item $\downarrow$
+
+        $(x \downarrow x) \downarrow ((x \downarrow x) \downarrow (x \downarrow x))$
+      \end{itemize}
+
+    \item $\top$
+      \begin{itemize}
+      \item $\neg , \lor $
+
+        $x \lor \neg x$
+      \item $\to , \bot $
+
+        $\bot -> x$
+      \item $\downarrow$
+
+        $(x \downarrow (x \downarrow x)) \downarrow (x \downarrow (x \downarrow x))$
+      \end{itemize}
+
+  \end{enumerate}
+
+\item
+  \begin{enumerate}
+    \item $(a \to b) \leftrightarrow \neg a \lor b \leftrightarrow b
+      \lor \neg a \leftrightarrow \neg b \to \neg a $
+
+    \item $((((a \to b) \to a) \to a) \to b) \to b \leftrightarrow
+      (\top \to b) \to b \leftrightarrow b \to b \leftrightarrow \top$
+      - по закону Пирса
+
+    \item
+
+      $(a \to (b \land c)) \leftrightarrow ((a \to b)\land(a \to c))$
+
+      $(\neg a \lor (b \land c)) \leftrightarrow ((\neg a \lor
+      b)\land(\neg a \lor c))$
+
+      $(\neg a \lor (b \land c)) \leftrightarrow (\neg a \lor (b \land
+      c))$ - по дистрибутивности
+
+    \item $(a \lor b \to c) \leftrightarrow ((a \to c) \lor (b \to
+      c))$
+
+      Вообще тут не тавтология при $a = \top, b = c = \bot$. Видимо,
+      там перепутана птичка во втором. НО даже если и перепутали, то
+      доказывается как в предыдущем пункте.
+    \item по задаче 4
+  \end{enumerate}
+
+\item
+  \begin{enumerate}
+    \item $(( b \to c) \lor b) \land a \to c$
+
+      $c = \top, a = \bot$
+    \item $(((a \land b) \to c) \to c) \lor \neg a$
+
+      $a = \top, b = c = \bot$
+
+    \item $((a \leftrightarrow b) \leftrightarrow b) \leftrightarrow
+      (c \leftrightarrow a)$ - по задаче 4
+  \end{enumerate}
+
+\item
+
+  Заметим, что связка эквивалентности коммутативна и
+  ассоциативна. Т.о. путем эквивалентных логических преобразований мы
+  можем добиться такой записи формулы, где все одинаковые переменные будут
+  стоять подряд. Выражение вида $x \leftrightarrow x$ заменяется на
+  тождественную истину. В свою очередь выражение вида $x \leftrightarrow
+  \top$ эквивалентно просто $x$. Сокращая таким образом выражение,
+  получаем, что либо все одинаковые переменные сократились (было
+  четное число), либо остались
+  в единственном экземпляре (в случае нечетного количества). Не трудно
+  увидеть, что последний случай не является тавтологией, т.к. оставшиеся
+  переменные могут иметь любую оценку.
+\end{enumerate}
+
+\end{document}

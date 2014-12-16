@@ -1,8 +1,9 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{polyglossia}
-\usepackage{comment}
 \usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 \setmainlanguage{russian}
 \setotherlanguage{english}
 \newfontfamily\russianfont[Script=Cyrillic,Mapping=tex-text]
@@ -11,200 +12,20 @@
 
 \begin{document}
 
-\title{Домашняя работа 2}
+\title{Домашняя работа}
 \author{Алина Крамар}
 
 \maketitle
+\begin{itemize}
+
+\item $\vdash (A \to b) \land (B \to C) \to A \lor B \to C$
+
 \begin{enumerate}
 
-\item
-  \begin{itemize}
-  \item $\neg p \land \neg q \land \neg r \lor \neg p \land \neg q
-    \land r \lor \neg p \land q \land \neg r \lor \neg p \land q
-    \land r \lor p \land q \land \neg r$
+\item $(A \to b) \land (B \to C) \to A \lor B \vdash (A \to b) \land (B \to C) $
+\end{enumerate}
 
-    $$\neg p \land \neg q \land \neg r \lor \neg p \land \neg q
-    \land r \lor \neg p \land q \land \neg r \lor \neg p \land q
-    \land r \lor p \land q \land \neg r =$$ $$\neg p \land \neg q \lor
-    \neg p \land \neg r \lor \neg p \land r \lor \neg p \land r \lor q
-    \land \neg r =$$ $$\neg p \lor q \land \neg r$$
-
-\begin{tabular}{|c|c|c|c|c|c|}
-% BEGIN RECEIVE ORGTBL foobar
-\hline
- & $\neg{}$ p $\land$ $\neg{}$ q $\land$ $\neg{}$ r & $\neg{}$ p $\land$ $\neg{}$ q $\land$ r & $\neg{}$ p $\land$ q $\land$ $\neg{}$ r & $\neg{}$ p $\land$ q $\land$ r & $\land$ r $\lor$ p $\land$ q $\land$ $\neg{}$ r \\
-\hline
-$\neg{}$ p & x & x & x & x &  \\
-\hline
-q $\land$ $\neg{}$ r &  &  & x &  & x \\
-\hline
-% END RECEIVE ORGTBL foobar
-\end{tabular}
-
-\begin{comment}
-#+ORGTBL: SEND foobar orgtbl-to-latex :splice t :skip 0
-  |----------------+----------------------------------+-----------------------------+-----------------------------+------------------------+-------------------------------------|
-  |                | \neg p \land \neg q \land \neg r | \neg p \land \neg q \land r | \neg p \land q \land \neg r | \neg p \land q \land r | \land r \lor p \land q \land \neg r |
-  |----------------+----------------------------------+-----------------------------+-----------------------------+------------------------+-------------------------------------|
-  | \neg p         | x                                | x                           | x                           | x                      |                                     |
-  |----------------+----------------------------------+-----------------------------+-----------------------------+------------------------+-------------------------------------|
-  | q \land \neg r |                                  |                             | x                           |                        | x                                   |
-  |----------------+----------------------------------+-----------------------------+-----------------------------+------------------------+-------------------------------------|
-
-\end{comment}
-
-
-\item $\overline{pq}rs+\overline{p}qrs+p\overline{q}rs+pq\overline{rs}+pq\overline{r}s+pqr\overline{s}+pqrs$
-
-  $$\overline{pq}rs+\overline{p}qrs+p\overline{q}rs+pq\overline{rs}+pq\overline{r}s+pqr\overline{s}+pqrs
-  =$$
-$$\overline{p}rs+\overline{q}rs+qrs+prs+pq\overline{r}+pq\overline{s}+pqs+pqr
-=$$ $$pq+rs$$
-
-
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-% BEGIN RECEIVE ORGTBL table2
-\hline
- & $\overline{pq}rs$ & $\overline{p}qrs$ & $p\overline{q}rs$ & $pq\overline{rs}$ & $pq\overline{r}s$ & $pqr\overline{s}$ & $pqrs$ \\
-\hline
-$pq$ &  &  &  & x & x & x & x \\
-\hline
-$rs$ & x & x & x &  &  &  & x \\
-\hline
-% END RECEIVE ORGTBL table2
-\end{tabular}
-
-\begin{comment}
-#+ORGTBL: SEND table2 orgtbl-to-latex :splice t :skip 0
-|------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+--------|
-|      | $\overline{pq}rs$ | $\overline{p}qrs$ | $p\overline{q}rs$ | $pq\overline{rs}$ | $pq\overline{r}s$ | $pqr\overline{s}$ | $pqrs$ |
-|------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+--------|
-| $pq$ |                   |                   |                   | x                 | x                 | x                 | x      |
-|------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+--------|
-| $rs$ | x                 | x                 | x                 |                   |                   |                   | x      |
-|------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+--------|
-\end{comment}
 
 \end{itemize}
-
-\item $p\overline{q}+\overline{p}q\overline{r}$
-
-$$p(q \oplus 1) \oplus (p \oplus 1)q(r \oplus 1) \oplus
-p\overline{p}q\overline{qr} = $$
-$$pq \oplus p \oplus pq \oplus q \oplus qr \oplus pqr = $$
-$$p \oplus q \oplus qr \oplus pqr $$
-
-
-\item Построить полином Жегалкина для функции с заданой таблицей истинности
-
-
-\begin{tabular}{|r|r|r|c|}
-% BEGIN RECEIVE ORGTBL table3
-\hline
-$x$ & $y$ & $z$ & $f(x, y, z)$ \\
-\hline
-0 & 0 & 0 & 1 \\
-\hline
-0 & 0 & 1 & 0 \\
-\hline
-0 & 1 & 0 & 0 \\
-\hline
-0 & 1 & 1 & 0 \\
-\hline
-1 & 0 & 0 & 1 \\
-\hline
-1 & 0 & 1 & 0 \\
-\hline
-1 & 1 & 0 & 0 \\
-\hline
-1 & 1 & 1 & 1 \\
-\hline
-% END RECEIVE ORGTBL table3
-\end{tabular}
-\begin{comment}
-#+ORGTBL: SEND table3 orgtbl-to-latex :splice t :skip 0
-|-----+-----+-----+--------------|
-| $x$ | $y$ | $z$ | $f(x, y, z)$ |
-|-----+-----+-----+--------------|
-|   0 |   0 |   0 |            1 |
-|-----+-----+-----+--------------|
-|   0 |   0 |   1 |            0 |
-|-----+-----+-----+--------------|
-|   0 |   1 |   0 |            0 |
-|-----+-----+-----+--------------|
-|   0 |   1 |   1 |            0 |
-|-----+-----+-----+--------------|
-|   1 |   0 |   0 |            1 |
-|-----+-----+-----+--------------|
-|   1 |   0 |   1 |            0 |
-|-----+-----+-----+--------------|
-|   1 |   1 |   0 |            0 |
-|-----+-----+-----+--------------|
-|   1 |   1 |   1 |            1 |
-|-----+-----+-----+--------------|
-\end{comment}
-
-$$f = a_{0} \oplus a_{1}x \oplus a_{2}y \oplus a_{3}z \oplus
-a_{12}xy \oplus a_{13}xz \oplus a_{23}yz \oplus a_{123}xyz $$
-
-$f(0, 0, 0) = a_{0} = 1$
-
-$f(0, 0, 1) = 1 \oplus a_{3} = 0 \Rightarrow a_{3} = 1$
-
-$f(0, 1, 0) = 1 \oplus a_{2} = 0 \Rightarrow a_{2} = 1$
-
-$f(0, 1, 1) = 1 \oplus 1 \oplus 1 \oplus a_{23} = 0 \Rightarrow a_{23}
-= 1$
-
-$f(1, 0, 0) = 1 \oplus a_{1} = 1 \Rightarrow a_{1} = 0$
-
-$f(1, 0, 1) = 1 \oplus 1 \oplus a_{13} = 0 \Rightarrow a_{13} = 0$
-
-$f(1, 1, 0) = 1 \oplus 1 \oplus a_{12} = 0 \Rightarrow a_{12} = 0$
-
-$f(1, 1, 1) = 1 \oplus 1 \oplus 1 \oplus 1 \oplus a_{123} = 1
-\Rightarrow a_{123} = 1$
-
-Ответ: $f(x,y,z) = 1 \oplus y \oplus z \oplus yz \oplus xyz$
-
-\item Докажите неполноту системы связок:
-
-  \begin{enumerate}
-  \item $(\oplus, \land)$
-
-    $\oplus$ и $\land$ из $T_{0}$, значит не выполнен критерий Поста.
-
-  \item $(\land, \lor, \to)$
-
-    Тут тоже обе из $T_{o}$, соответственно критерий Поста так же не выполнен.
-  \item $(\neg)$
-
-    Отрицание не является линейной функцией (в 1 равна 0). Т.о. не
-    выполняется критерий Поста.
-  \end{enumerate}
-
-\item Докажите полноту системы связок
-  \begin{enumerate}
-    \item $(1, \lor, \oplus)$
-
-      Выразим через эти связки другую полную систему связок. Отрицание
-      выражается как $x \oplus 1$. В свою очередь конъюнкция по
-      законам Моргана выражается как $(x \oplus 1) \lor (y \oplus 1)
-      \oplus 1$. Может быть может короче и красивее, но мне в голову
-      не пришло.
-    \item $(\to, 0)$
-
-      Выразим через эти связки другую полную систему связок. Мы знаем,
-      что система связок $(\lor, \neg)$ полна. Поэтому выразим эти
-      операции через $\to$ и $0$.
-
-      $(x \to 0) \to y$ - дизъюнкция.
-
-      $x \to 0$ - отрицание.
-
-      В принципе этого достаточно, т.к. конъюнкция выражается через
-      отрицание и дизъюнкцию по законам Моргана.
-  \end{enumerate}
-\end{enumerate}
 
 \end{document}
