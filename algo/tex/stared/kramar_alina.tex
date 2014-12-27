@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{polyglossia}
+\usepackage{fullpage}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\newfontfamily\russianfont[Script=Cyrillic,Mapping=tex-text]
+{CMU Sans Serif}
+
+
+\begin{document}
+
+\title{Задачи со звездочкой}
+\author{Алина Крамар}
+
+\maketitle
+\begin{enumerate}
+
+\item[7.6*]
+
+Раскрасим граф как-нибудь. Затем будем исправлять раскраску.
+Будем итерироваться по вершинам, пока не получим нужную раскраску. При
+этом на каждой итерации будем смотреть, если у вершины больше чем один
+сосед такого же цвета, то будем инвертировать цвет вершины. При этом
+на каждой итерации количество разноцветных ребер будет
+уменьшаться. Кроме того, т.к. степень вершины не привосходит трех, то
+таких переборов будт не много. Поэтому сложность $O(|V|)$
+сохраняется. (Я говорю $O(|V|)$, потому что $|E| < 3|V|$).
+
+\end{enumerate}
+
+\end{document}
